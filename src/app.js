@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 
-require('./database/connect')
+require('./database/connect');
 require('dotenv').config();
 
 const app = express()
@@ -15,6 +15,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(cors());
 
 //routes
+app.use('/api/auth',require('./routes/auth'));
 
 
 app.listen(app.get('port'),()=>{
