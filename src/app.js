@@ -15,6 +15,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(cors());
 
 //routes
+app.use('/api/product',require('./routes/product'));
 app.use('/api/auth',require('./routes/auth'));
 
 
